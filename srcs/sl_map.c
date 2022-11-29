@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_main.c                                          :+:      :+:    :+:   */
+/*   sl_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 09:26:08 by plau              #+#    #+#             */
-/*   Updated: 2022/11/29 18:49:15 by plau             ###   ########.fr       */
+/*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
+/*   Updated: 2022/11/29 20:56:25 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/**
- * Set up so that when any key is pressed, will print "Key pressed"
- * Set up arrow keys, everytime you press up, will print "UP"
- */
-
-/* Start of the main function */
-int	main(int ac, char **av)
-{	
-	t_prg	prg;
-
-	check_map(&prg, ac, av);
-	init_game(&prg);
-	loop_game(&prg);
-	return (exit_success());
+/* Check extension .ber */
+void	check_map(t_prg *prg, int ac, char **av)
+{
+	if (ac != 2)
+		exit_fail("No path to map");
+	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4) != 0)
+		exit_fail("Invalid map extension");
+	(void)prg;
 }

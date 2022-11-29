@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/11/29 18:28:05 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/29 20:36:37 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ void	init_mlx(t_prg *prg);
 
 /* Hooks */
 void	loop_game(t_prg *prg);
+
+/* Map */
+void	check_map(t_prg *prg, int ac, char **av);
 
 /* Exit functions */
 int		exit_success(void);
