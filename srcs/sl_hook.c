@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:43:19 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 15:24:12 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 16:04:49 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int	user_input(int keycode, t_prg *prg)
 {
 	if (keycode == KEY_ESC)
 		exit_success();
-	else if (keycode == KEY_UP)
+	else if (keycode == KEY_W)
 		prg->ply.pos.y -= PLY_MVSPEED;
-	else if (keycode == KEY_DOWN)
+	else if (keycode == KEY_S)
 		prg->ply.pos.y += PLY_MVSPEED;
-	else if (keycode == KEY_LEFT)
+	else if (keycode == KEY_A)
 		prg->ply.pos.x -= PLY_MVSPEED;
-	else if (keycode == KEY_RIGHT)
+	else if (keycode == KEY_D)
 		prg->ply.pos.x += PLY_MVSPEED;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 15:53:09 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 15:56:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_is_rectangular(int x, char *str)
 		exit_fail("Map is not rectangular");
 }
 
-/* Check if not 1 then fail */
+/* Check first and last row- if not 1 then fail */
 void	check_walls(t_prg *prg)
 {
 	int	j;
@@ -37,6 +37,7 @@ void	check_walls(t_prg *prg)
 	}
 }
 
+/* Check first column if not 1 then fail */
 void	check_front_and_back(char *str)
 {
 	if (str[0] != '1')

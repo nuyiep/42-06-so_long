@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 13:22:34 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 16:03:54 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <mlx.h>
 
 # define KEY_ESC		53
+# define KEY_W			13
+# define KEY_A			0
+# define KEY_S			1
+# define KEY_D			2
 # define KEY_UP			126
 # define KEY_DOWN		125
 # define KEY_LEFT		123
