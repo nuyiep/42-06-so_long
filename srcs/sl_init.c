@@ -6,18 +6,20 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:43:30 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 13:24:23 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 22:34:14 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
+/* Initialize the window */
 void	init_mlx(t_prg *prg)
 {
 	prg->mlx = mlx_init();
 	prg->win.win = mlx_new_window(prg->mlx, 1280, 800, "so_long");
 }
 
+/* Initialize the sprites */
 void	init_sprites(t_prg *prg)
 {
 	prg->map.p_img.img = mlx_xpm_file_to_image(prg->mlx, "sprites/player.xpm",
@@ -34,6 +36,7 @@ void	init_sprites(t_prg *prg)
 			&prg->map.w_img.size.x, &prg->map.w_img.size.y);
 }
 
+/* Initialize player position, collectible and steps */
 void	init_player(t_prg *prg)
 {
 	prg->ply.pos.x = 0;
@@ -42,12 +45,14 @@ void	init_player(t_prg *prg)
 	prg->ply.steps = 0;
 }
 
+/* Initialize map's size */
 void	init_map(t_prg *prg)
 {
 	prg->map.size.x = 0;
 	prg->map.size.y = 0;
 }
 
+/* Main function for initialization */
 void	init_game(t_prg *prg)
 {
 	init_mlx(prg);

@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:43:19 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 16:04:49 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 22:41:58 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
+/* Apply user input */
 int	user_input(int keycode, t_prg *prg)
 {
 	if (keycode == KEY_ESC)
@@ -27,6 +28,7 @@ int	user_input(int keycode, t_prg *prg)
 	return (0);
 }
 
+/* Putting image to window */
 int	user_update(t_prg *prg)
 {
 	mlx_clear_window(prg->mlx, prg->win.win);
@@ -35,6 +37,7 @@ int	user_update(t_prg *prg)
 	return (0);
 }
 
+/* Main function for printing images */
 void	loop_game(t_prg *prg)
 {
 	mlx_hook(prg->win.win, MLX_PRESS, MLX_MASK, &user_input, prg);

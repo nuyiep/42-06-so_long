@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:10:03 by plau              #+#    #+#              #
-#    Updated: 2022/11/29 20:35:51 by plau             ###   ########.fr        #
+#    Updated: 2022/11/30 22:13:51 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS_FILES    	=   	sl_main \
 						sl_hook \
 						sl_init \
 						sl_movement \
-						sl_map
+						sl_map \
+						sl_floodfill
 SRCS       		=     	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRCS_FILES)))
 OBJS        	=     	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRCS_FILES)))
 SRCS_DIR    	=    	srcs/

@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 15:56:56 by plau             ###   ########.fr       */
+/*   Updated: 2022/11/30 22:34:58 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
+/* Check if the map is rectangular- if no, then exit_fail */
 void	check_is_rectangular(int x, char *str)
 {
 	int	cur_len;
@@ -21,7 +22,7 @@ void	check_is_rectangular(int x, char *str)
 		exit_fail("Map is not rectangular");
 }
 
-/* Check first and last row- if not 1 then fail */
+/* Check first and last row- if not 1 then exit_fail */
 void	check_walls(t_prg *prg)
 {
 	int	j;
@@ -37,7 +38,7 @@ void	check_walls(t_prg *prg)
 	}
 }
 
-/* Check first column if not 1 then fail */
+/* Check first and last column if not 1 then exit_fail */
 void	check_front_and_back(char *str)
 {
 	if (str[0] != '1')
@@ -46,6 +47,7 @@ void	check_front_and_back(char *str)
 		exit_fail("Map not surrounded by wall");
 }
 
+/* Open file in order to check every line */
 void	check_each_line(t_prg *prg, char *path)
 {
 	char	*str;
@@ -75,6 +77,7 @@ void	check_each_line(t_prg *prg, char *path)
 	free(map_str);
 }
 
+/* Main function to check map */
 /* Check extension .ber */
 void	check_map(t_prg *prg, int ac, char **av)
 {
@@ -83,4 +86,5 @@ void	check_map(t_prg *prg, int ac, char **av)
 	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4) != 0)
 		exit_fail("Invalid map extension");
 	check_each_line(prg, av[1]);
+	check_valid_path(prg);
 }
