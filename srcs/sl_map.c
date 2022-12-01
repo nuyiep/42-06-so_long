@@ -6,21 +6,11 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 15:29:28 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 21:36:06 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
-
-/* Check if the map is rectangular- if no, then exit_fail */
-void	check_is_rectangular(int x, char *str)
-{
-	int	cur_len;
-
-	cur_len = ft_strlen(str) - 1;
-	if (x != cur_len)
-		exit_fail("Map is not rectangular");
-}
 
 /* Check first and last row- if not 1 then exit_fail */
 void	check_walls(t_prg *prg)
@@ -47,6 +37,24 @@ void	check_front_and_back(char *str)
 		exit_fail("Map not surrounded by wall");
 }
 
+char	*check_line(t_prg *prg, char *str, char *map_str, int fd)
+{
+	while (str != NULL)
+	{
+		map_str = ft_strjoin_free(map_str, str);
+		prg->map.size.y++;
+		free(str);
+		str = get_next_line(fd);
+		if (str != NULL)
+		{
+			check_front_and_back(str);
+			if (prg->map.size.x != (int)ft_strlen(str) - 1)
+				exit_fail("Map is not rectangular");
+		}
+	}
+	return (map_str);
+}
+
 /* Open file in order to check every line */
 void	check_each_line(t_prg *prg, char *path)
 {
@@ -62,18 +70,7 @@ void	check_each_line(t_prg *prg, char *path)
 		exit_fail("Empty map");
 	prg->map.size.x = ft_strlen(str) - 1;
 	map_str = ft_calloc(1, sizeof(char *));
-	while (str != NULL)
-	{
-		map_str = ft_strjoin_free(map_str, str);
-		prg->map.size.y++;
-		free(str);
-		str = get_next_line(fd);
-		if (str != NULL)
-		{
-			check_front_and_back(str);
-			check_is_rectangular(prg->map.size.x, str);
-		}
-	}
+	map_str = check_line(prg, str, map_str, fd);
 	prg->map.map = ft_split(map_str, '\n');
 	check_walls(prg);
 	free(map_str);

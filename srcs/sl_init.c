@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:43:30 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 22:34:14 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 20:46:51 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	init_sprites(t_prg *prg)
 /* Initialize player position, collectible and steps */
 void	init_player(t_prg *prg)
 {
-	prg->ply.pos.x = 0;
-	prg->ply.pos.y = 0;
+	prg->ply.pos.x = -1;
+	prg->ply.pos.y = -1;
 	prg->ply.col = 0;
 	prg->ply.steps = 0;
 }
@@ -50,6 +50,8 @@ void	init_map(t_prg *prg)
 {
 	prg->map.size.x = 0;
 	prg->map.size.y = 0;
+	prg->map.exit_pos.x = -1;
+	prg->map.exit_pos.y = -1;
 }
 
 /* Main function for initialization */

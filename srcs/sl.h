@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 14:58:27 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 20:46:48 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ typedef struct s_map
 	t_img	p_img;
 	t_img	w_img;
 	t_vec	size;
+	t_vec	exit_pos;
 	char	**map;
+	int		max_col;
 }	t_map;
 
 typedef struct s_ply

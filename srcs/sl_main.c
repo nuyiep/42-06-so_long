@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:26:08 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 22:31:26 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 20:57:07 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(int ac, char **av)
 {	
 	t_prg	prg;
 
-	check_map(&prg, ac, av);
 	init_game(&prg);
+	check_map(&prg, ac, av);
 	loop_game(&prg);
 	return (exit_success());
 }
