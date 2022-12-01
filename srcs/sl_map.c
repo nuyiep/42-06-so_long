@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 14:45:05 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 15:29:28 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	check_each_line(t_prg *prg, char *path)
 	if (fd == -1)
 		exit_fail("Fail to open file");
 	str = get_next_line(fd);
+	if (str == NULL)
+		exit_fail("Empty map");
 	prg->map.size.x = ft_strlen(str) - 1;
 	map_str = ft_calloc(1, sizeof(char *));
 	while (str != NULL)
