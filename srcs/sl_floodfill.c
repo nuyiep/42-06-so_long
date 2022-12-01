@@ -6,13 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:14 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 00:04:17 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 12:39:41 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/* Check for valid path C, 0 , E becomes F */
+/* Check for valid path 0, P , C and E becomes F */
 void	flood_fill(char **tab, t_vec size, t_vec cur)
 {
 	if (cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x

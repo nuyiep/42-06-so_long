@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 23:57:00 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 12:48:40 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	check_is_rectangular(int x, char *str)
 	int	cur_len;
 
 	cur_len = ft_strlen(str) - 1;
-	ft_printf("Current length: %d\n", cur_len);
-	ft_printf("X length: %d\n", x);
 	if (x != cur_len)
 		exit_fail("Map is not rectangular");
 }
