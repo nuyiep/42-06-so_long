@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/11/30 18:16:04 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 14:58:27 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,13 @@ void	loop_game(t_prg *prg);
 /* Map */
 void	check_map(t_prg *prg, int ac, char **av);
 void	check_valid_path(t_prg *prg);
+void	get_data(t_prg *prg);
 
 /* Exit functions */
 int		exit_success(void);
 int		exit_fail(char *error);
+
+/* Temp- cant move into walls */
+void	check_within_map(t_prg *prg);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 12:48:40 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 14:45:05 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void	check_map(t_prg *prg, int ac, char **av)
 	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".ber", 4) != 0)
 		exit_fail("Invalid map extension");
 	check_each_line(prg, av[1]);
+	get_data(prg);
 	check_valid_path(prg);
 }

@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:14 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 12:39:41 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/01 15:07:35 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	check_valid_path(t_prg *prg)
 	t_vec	begin_c;
 
 	size = (t_vec){prg->map.size.x, prg->map.size.y};
-	begin_c = (t_vec){1, 1};
+	begin_c = (t_vec){prg->ply.pos.x, prg->ply.pos.y};
 	k = 0;
 	while (k < prg->map.size.y)
 		ft_printf("%s\n", prg->map.map[k++]);
