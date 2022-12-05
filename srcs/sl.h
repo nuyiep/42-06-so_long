@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/01 20:46:48 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/05 11:53:23 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,23 @@ void	loop_game(t_prg *prg);
 void	check_map(t_prg *prg, int ac, char **av);
 void	check_valid_path(t_prg *prg);
 void	get_data(t_prg *prg);
+void	check_each_line(t_prg *prg, char *path);
+
+/* Display map */
+void	sl_display_image(t_prg *prg);
 
 /* Exit functions */
 int		exit_success(void);
 int		exit_fail(char *error);
 
+/* Helper function */
+void	for_printing(t_prg *prg);
+void	sl_printmap(t_prg *prg, char **map);
+
 /* Temp- cant move into walls */
-void	check_within_map(t_prg *prg);
+int		check_within_map(int keycode, t_prg *prg);
+void	count_ply_col(t_prg *prg);
+
+int		user_input(int keycode, t_prg *prg);
 
 #endif

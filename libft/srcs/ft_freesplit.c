@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:32:43 by plau              #+#    #+#             */
-/*   Updated: 2022/11/26 18:59:01 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/05 11:29:36 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_freesplit(char **split)
 	int	i;
 
 	i = -1;
-	while (split[++i] != NULL)
+	while (split[++i] != 0)
 		free(split[i]);
 	free(split);
 }
