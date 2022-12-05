@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:45:14 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 11:43:36 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/05 18:34:25 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	get_data(t_prg *prg)
 		{
 			if (prg->map.map[k][j] != '0' && prg->map.map[k][j] != '1'
 				&& prg->map.map[k][j] != 'C' && prg->map.map[k][j] != 'E'
-				&& prg->map.map[k][j] != 'P')
+				&& prg->map.map[k][j] != 'P' && prg->map.map[k][j] != 'N')
 				exit_fail("Invalid character found");
 			if (prg->map.map[k][j] == 'C')
 				prg->map.max_col++;
@@ -60,6 +60,8 @@ void	get_data(t_prg *prg)
 				check_and_set(&prg->ply.pos, j, k, 'P');
 			if (prg->map.map[k][j] == 'E')
 				check_and_set(&prg->map.exit_pos, j, k, 'E');
+			if (prg->map.map[k][j] == 'N')
+				check_and_set(&prg->emy, j, k, 'N');
 		}
 	}
 	check_if_exist(prg);

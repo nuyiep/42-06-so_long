@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 11:53:23 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/05 22:31:25 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "../libft/srcs/ft_printf.h"
 # include <mlx.h>
 
+/* Mac key codes */
 # define KEY_ESC		53
 # define KEY_W			13
 # define KEY_A			0
@@ -28,10 +29,17 @@
 # define KEY_LEFT		123
 # define KEY_RIGHT		124
 
+/* MLX hook- hooking event and mask */
+/* 2 is key press */
+/* No event mask here so 0 */
 # define MLX_PRESS 		2	
 # define MLX_MASK 		0
 
+/* Player movement */
 # define PLY_MVSPEED	64
+
+# define PINK			0xffb6c1
+# define WHITE			0xffffff
 
 typedef struct s_vec
 {
@@ -79,6 +87,7 @@ typedef struct s_prg
 	t_win	win;
 	t_map	map;
 	t_ply	ply;
+	t_vec	emy;
 }	t_prg;
 
 /* Initialize */
@@ -88,6 +97,7 @@ void	init_mlx(t_prg *prg);
 
 /* Hooks */
 void	loop_game(t_prg *prg);
+int		user_input(int keycode, t_prg *prg);
 
 /* Map */
 void	check_map(t_prg *prg, int ac, char **av);
@@ -95,8 +105,13 @@ void	check_valid_path(t_prg *prg);
 void	get_data(t_prg *prg);
 void	check_each_line(t_prg *prg, char *path);
 
-/* Display map */
+/* Display map and on screen steps */
 void	sl_display_image(t_prg *prg);
+int		sl_check_enemy(t_prg *prg);
+void	sl_on_screen_steps(t_prg *prg);
+
+/* Handle collectibles */
+void	check_state(t_prg *prg);
 
 /* Exit functions */
 int		exit_success(void);
@@ -105,11 +120,5 @@ int		exit_fail(char *error);
 /* Helper function */
 void	for_printing(t_prg *prg);
 void	sl_printmap(t_prg *prg, char **map);
-
-/* Temp- cant move into walls */
-int		check_within_map(int keycode, t_prg *prg);
-void	count_ply_col(t_prg *prg);
-
-int		user_input(int keycode, t_prg *prg);
 
 #endif

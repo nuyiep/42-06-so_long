@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_hook.c                                          :+:      :+:    :+:   */
+/*   sl_on_screen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 15:43:19 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 19:05:27 by plau             ###   ########.fr       */
+/*   Created: 2022/12/05 21:07:18 by plau              #+#    #+#             */
+/*   Updated: 2022/12/05 22:31:01 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/* Putting image to window */
-int	user_update(t_prg *prg)
+/* Print the number of steps on screen */
+void	sl_on_screen_steps(t_prg *prg)
 {
-	mlx_clear_window(prg->mlx, prg->win.win);
-	sl_display_image(prg);
-	check_state(prg);
-	return (0);
-}
+	char	*steps;
+	char	*str;
 
-/* Main function for printing images */
-/* mlx_hook - hook user input  */
-void	loop_game(t_prg *prg)
-{
-	mlx_hook(prg->win.win, MLX_PRESS, MLX_MASK, &user_input, prg);
-	mlx_loop_hook(prg->mlx, &user_update, prg);
-	mlx_loop(prg->mlx);
+	steps = ft_itoa(prg->ply.steps);
+	str = ft_strjoin("Movement count: ", steps);
+	mlx_string_put(prg->mlx, prg->win.win, 10, 15, WHITE, str);
+	free(steps);
+	free(str);
 }
