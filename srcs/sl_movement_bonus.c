@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_movement.c                                      :+:      :+:    :+:   */
+/*   sl_movement_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:42:53 by plau              #+#    #+#             */
-/*   Updated: 2022/12/06 11:21:46 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 18:57:32 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	user_input_player(int keycode, t_prg *prg)
 	else
 		return (0);
 	prg->ply.steps++;
-	for_printing(prg);
+	ft_printf("Movement count: %d\n", prg->ply.steps);
 	return (0);
 }
 

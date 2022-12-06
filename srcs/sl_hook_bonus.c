@@ -6,13 +6,14 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:43:19 by plau              #+#    #+#             */
-/*   Updated: 2022/12/06 17:25:20 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 18:58:26 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/* Putting image to window (**) */
+/* Putting image to window */
+/* mlx_loop will keep looping even if user is not inputting any data */
 int	user_update(t_prg *prg)
 {
 	prg->win.fps++;
@@ -24,6 +25,7 @@ int	user_update(t_prg *prg)
 	return (0);
 }
 
+/* For exiting by clicking the cross on the window's frame */
 int	sl_windowexit(void)
 {
 	ft_printf("Thanks for playing\n");

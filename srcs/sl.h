@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/06 17:20:46 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 18:56:56 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@
 # define PLY_MVSPEED	64
 # define FPS			50
 
-# define PINK			0xffb6c1
 # define WHITE			0xffffff
 
 typedef struct s_vec
@@ -104,10 +103,6 @@ void	init_window(t_prg *prg);
 void	loop_game(t_prg *prg);
 int		user_input(int keycode, t_prg *prg);
 
-/* Animation */
-void	sl_player_ani(t_prg *prg);
-void	sl_enemy_ani(t_prg *prg);
-
 /* Map */
 void	check_map(t_prg *prg, int ac, char **av);
 void	check_valid_path(t_prg *prg);
@@ -127,7 +122,6 @@ int		exit_success(void);
 int		exit_fail(char *error);
 
 /* Helper function */
-void	for_printing(t_prg *prg);
 void	sl_printmap(t_prg *prg, char **map);
 
 #endif
