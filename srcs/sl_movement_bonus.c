@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:42:53 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 21:13:31 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 11:21:46 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	user_input(int keycode, t_prg *prg)
 		user_input_enemy(keycode, prg);
 		if (prg->ply.pos.y == prg->emy.y && prg->ply.pos.x == prg->emy.x)
 		{
-			ft_printf("Game Over~\n");
+			ft_printf("Game Over\n");
 			exit(0);
 		}
 	}

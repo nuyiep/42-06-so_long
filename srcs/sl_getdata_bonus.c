@@ -6,12 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:45:14 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 18:34:25 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 11:43:10 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
+/* Exit if C, P or E is not in the map */
 void	check_if_exist(t_prg *prg)
 {
 	if (prg->map.max_col == 0)
@@ -22,6 +23,7 @@ void	check_if_exist(t_prg *prg)
 		exit_fail("No exit in the map");
 }
 
+/* Exit if there is more than one P and E */
 void	check_and_set(t_vec *pos, int x, int y, char c)
 {
 	if (pos->x != -1 || pos->y != -1)
@@ -35,10 +37,8 @@ void	check_and_set(t_vec *pos, int x, int y, char c)
 	pos->y = y;
 }
 
-/**
- * Get player position (x, y)
- * Count how many collectible (C) in the map
- */
+/* Set P, E and N's initial position (x, y) */
+/* Count how many collectibles (C) in the map */
 void	get_data(t_prg *prg)
 {
 	int	k;

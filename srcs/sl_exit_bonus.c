@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:46:22 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 21:59:24 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 13:18:58 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	exit_success(void)
 {
-	ft_printf("Thanks for playing :)\n\n");
+	ft_printf("Thanks for playing\n");
 	system("leaks -q so_long");
 	exit(0);
 	return (0);

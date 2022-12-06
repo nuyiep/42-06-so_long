@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_on_screen.c                                     :+:      :+:    :+:   */
+/*   sl_helper.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 21:07:18 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 22:31:01 by plau             ###   ########.fr       */
+/*   Created: 2022/12/02 18:30:38 by plau              #+#    #+#             */
+/*   Updated: 2022/12/06 12:54:11 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/* Print the number of steps on screen */
-void	sl_on_screen_steps(t_prg *prg)
+/* Printing movement count in shell */
+void	for_printing(t_prg *prg)
 {
-	char	*steps;
-	char	*str;
+	ft_printf("Movement count: %d\n", prg->ply.steps);
+}
 
-	steps = ft_itoa(prg->ply.steps);
-	str = ft_strjoin("Movement count: ", steps);
-	mlx_string_put(prg->mlx, prg->win.win, 10, 15, WHITE, str);
-	free(steps);
-	free(str);
+/* Printing map in shell */
+void	sl_printmap(t_prg *prg, char **map)
+{
+	int	j;
+
+	j = -1;
+	while (++j < prg->map.size.y)
+		ft_printf("%s\n", map[j]);
+	ft_printf("\n");
 }

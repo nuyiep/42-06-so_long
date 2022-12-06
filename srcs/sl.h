@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 22:31:25 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 17:20:46 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,17 @@
 # define KEY_RIGHT		124
 
 /* MLX hook- hooking event and mask */
-/* 2 is key press */
+/* Event 2 is key press - keyboard functions */
 /* No event mask here so 0 */
+/* Event 17 is destroy notify - window exit */
 # define MLX_PRESS 		2	
 # define MLX_MASK 		0
+# define EXIT_PRESS		17
+# define EXIT_MASK		0
 
-/* Player movement */
+/* Player & Enemy movement */
 # define PLY_MVSPEED	64
+# define FPS			50
 
 # define PINK			0xffb6c1
 # define WHITE			0xffffff
@@ -94,10 +98,15 @@ typedef struct s_prg
 void	init_game(t_prg *prg);
 void	init_sprites(t_prg *prg);
 void	init_mlx(t_prg *prg);
+void	init_window(t_prg *prg);
 
 /* Hooks */
 void	loop_game(t_prg *prg);
 int		user_input(int keycode, t_prg *prg);
+
+/* Animation */
+void	sl_player_ani(t_prg *prg);
+void	sl_enemy_ani(t_prg *prg);
 
 /* Map */
 void	check_map(t_prg *prg, int ac, char **av);

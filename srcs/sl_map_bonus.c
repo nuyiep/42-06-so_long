@@ -6,13 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 18:48:05 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 11:27:39 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 11:45:42 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/* Check first and last row- if not 1 then exit_fail */
+/* Check first and last row- if not 1 then exit */
 void	check_walls(t_prg *prg)
 {
 	int	j;
@@ -28,7 +28,7 @@ void	check_walls(t_prg *prg)
 	}
 }
 
-/* Check first and last column if not 1 then exit_fail */
+/* Check first and last column if not 1 then exit */
 void	check_front_and_back(char *str)
 {
 	if (str[0] != '1')
@@ -37,6 +37,7 @@ void	check_front_and_back(char *str)
 		exit_fail("Map not surrounded by wall");
 }
 
+/* Part 2: Check every line */
 char	*check_line(t_prg *prg, char *str, char *map_str, int fd)
 {
 	while (str != NULL)
@@ -55,7 +56,7 @@ char	*check_line(t_prg *prg, char *str, char *map_str, int fd)
 	return (map_str);
 }
 
-/* Open file in order to check every line */
+/* Part 1: Open file in order to check every line */
 void	check_each_line(t_prg *prg, char *path)
 {
 	char	*str;

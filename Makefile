@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:10:03 by plau              #+#    #+#              #
-#    Updated: 2022/12/05 21:09:46 by plau             ###   ########.fr        #
+#    Updated: 2022/12/06 16:51:28 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,18 @@ RM            	=    	rm -f
 CFLAGS       	=    	-Wall -Wextra -Werror -Imlx
 # CFLAGS       	=    	-fsanitize=address -g3
 MLXFLAGS   		=    	-L /usr/local/lib -lmlx -framework OpenGL -framework AppKit
-SRCS_FILES    	=   	sl_main \
-						sl_exit \
-						sl_hook \
-						sl_init \
-						sl_movement \
-						sl_map \
-						sl_floodfill \
-						sl_getdata \
-						sl_helper \
-						sl_mapprojection \
-						sl_checkstate \
-						sl_on_screen
+SRCS_FILES    	=   	sl_main_bonus \
+						sl_exit_bonus \
+						sl_hook_bonus \
+						sl_init_bonus \
+						sl_movement_bonus \
+						sl_map_bonus \
+						sl_floodfill_bonus \
+						sl_getdata_bonus \
+						sl_helper_bonus \
+						sl_mapprojection_bonus \
+						sl_checkstate_bonus \
+						sl_on_screen_bonus
 SRCS       		=     	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRCS_FILES)))
 OBJS        	=     	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRCS_FILES)))
 SRCS_DIR    	=    	srcs/
@@ -39,6 +39,10 @@ OBJS_DIR    	=    	objs/
 all:            
 						mkdir -p $(OBJS_DIR)
 						make libft
+						make $(NAME)
+
+bonus:
+						mkdir -p $(OBJS_DIR)
 						make $(NAME)
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c

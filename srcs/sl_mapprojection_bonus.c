@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:40:29 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 21:52:06 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 16:31:51 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int	sl_check_enemy(t_prg *prg)
 void	sl_display_image(t_prg *prg)
 {
 	sl_map_projection(prg);
-	sl_print_player(prg);
+	sl_player_ani(prg);
 	if (sl_check_enemy(prg))
-		sl_print_enemy(prg);
+		sl_enemy_ani(prg);
 	sl_on_screen_steps(prg);
 }

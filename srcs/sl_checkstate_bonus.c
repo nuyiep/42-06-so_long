@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:55:10 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 22:27:22 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/06 13:17:53 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_state(t_prg *prg)
 	{
 		if (prg->ply.col == prg->map.max_col)
 		{
-			ft_printf("\nYay! You won! :D \n");
+			ft_printf("You won!\n");
 			exit_success();
 		}
 	}
