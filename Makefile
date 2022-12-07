@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 09:10:03 by plau              #+#    #+#              #
-#    Updated: 2022/12/06 16:51:28 by plau             ###   ########.fr        #
+#    Updated: 2022/12/07 15:33:51 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ MLX            	=    	mlx/libmlx.a
 CC            	=    	gcc
 RM            	=    	rm -f
 CFLAGS       	=    	-Wall -Wextra -Werror -Imlx
-# CFLAGS       	=    	-fsanitize=address -g3
 MLXFLAGS   		=    	-L /usr/local/lib -lmlx -framework OpenGL -framework AppKit
 SRCS_FILES    	=   	sl_main_bonus \
 						sl_exit_bonus \

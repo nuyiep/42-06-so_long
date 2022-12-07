@@ -6,16 +6,13 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:42:53 by plau              #+#    #+#             */
-/*   Updated: 2022/12/06 18:57:32 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/07 15:37:55 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sl.h"
 
-/**
- * Checks for collision
- * Returns 0 if no collision (ie not a wall), else return 1
- */
+/* Check whether collided into wall, if no collision return 0 */
 int	col(t_prg *prg, int x, int y)
 {
 	if (prg->map.map[y][x] == '1')

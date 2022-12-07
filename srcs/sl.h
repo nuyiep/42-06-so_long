@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:06:45 by plau              #+#    #+#             */
-/*   Updated: 2022/12/06 18:56:56 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/07 15:38:25 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@
 # define EXIT_PRESS		17
 # define EXIT_MASK		0
 
-/* Player & Enemy movement */
 # define PLY_MVSPEED	64
 # define FPS			50
-
 # define WHITE			0xffffff
 
 typedef struct s_vec

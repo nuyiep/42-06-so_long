@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sl_floodfill.c                                     :+:      :+:    :+:   */
+/*   sl_floodfill_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:12:14 by plau              #+#    #+#             */
-/*   Updated: 2022/12/05 17:45:26 by plau             ###   ########.fr       */
+/*   Updated: 2022/12/07 15:36:48 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,3 @@ void	check_valid_path(t_prg *prg)
 		free(temp_map[j]);
 	free(temp_map);
 }
-
-/* 
-- if (temp_map[j][k] == 'C' || temp_map[j][k] == 'P' || temp_map[j][k] == 'E')
-- can be written as ft_strchr("CEP", temp_map[j][k] :D
-*/
